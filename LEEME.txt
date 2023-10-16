@@ -1,0 +1,33 @@
+# Instalación del Proyecto Sistema de Votación
+
+## Requisitos
+
+- PHP versión 7.2 o superior.
+- Base de Datos MySQL
+
+## Pasos para la instalación
+
+1. Clona el repositorio desde GitHub:
+
+2. Configuración de la Base de Datos:
+
+   - Crea una nueva base de datos en tu servidor de MySQL .
+   - Importa el archivo SQL ubicado en la carpeta `sql` a tu nueva base de datos. Este archivo contiene las tablas necesarias para el sistema de votación.
+
+3. Configuración de la Conexión a la Base de Datos:
+
+   - Abre el archivo `conexion.php` y actualiza la información de conexión con tu base de datos (nombre de usuario, contraseña, nombre de la base de datos).
+
+4. Configuración de la API para Regiones y Comunas:
+
+   - Abre el archivo `consumiapi.js` y asegúrate de que la URL de la API esté configurada correctamente para obtener las regiones y comunas.
+
+5. Configuración del Servidor Web:
+
+   - Asegúrate de tener un servidor web como Apache o Nginx configurado en tu entorno de desarrollo.
+
+6. Ejecutar el Proyecto:
+
+   - Abre tu navegador web y accede al proyecto a través de tu servidor local (por ejemplo, `http://localhost/SistemaVotacion`).
+
+7. ¡Listo! Ahora puedes empezar a usar el Sistema de Votación.

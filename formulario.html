@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- 
+Este archivo HTML contiene el formulario de votación.
+Se incluyen campos para Nombre y Apellido, Alias, RUT, Email, Región, Comuna, Candidato y opciones de cómo se enteró de nosotros.
+Se establecen validaciones y requisitos para cada campo.
+Los datos del formulario se enviarán a través de un método POST a procesar_voto.php.
+Se incluye un script JavaScript (consumiapi.js) que se encargará de cargar datos desde una API para las regiones y comunas.
+-->
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Votación</title>
+    <link rel="stylesheet" href="css/formulario.css">
+    <?php include 'conexion.php'; ?>
+
+</head>
+<body>
+    <h1>Formulario de Votación</h1>
+    <form action="php/procesar_voto.php" method="post">
+        <label for="nombre">Nombre y Apellido:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="alias">Alias:</label>
+        <input type="text" id="alias" name="alias" pattern="[a-zA-Z0-9]{6,}" title="Debe contener al menos 6 caracteres alfanuméricos" required><br>
+
+        <label for="rut">RUT (Formato Chile):</label>
+        <input type="text" id="rut" name="rut" required title="Formato de RUT xxxxxxxx-x"><br>
+
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="region">Región:</label>
+        <select id="region" name="region" required>
+            <option value="" disabled selected>Seleccione una región</option>
+            <!-- Opciones de regiones cargadas desde API -->
+            
+            
+            
+        </select><br>
+
+        <label for="comuna">Comuna:</label>
+        <select id="comuna" name="comuna" required>
+            <option value="" disabled selected>Seleccione una comuna</option>
+             <!-- Opciones de regiones cargadas desde API -->
+            
+            
+        </select><br>
+
+        <label for="candidato">Candidato:</label>
+        <select id="candidato" name="candidato" required>
+            <option value="" disabled selected>Seleccione un candidato</option>
+            
+            <option value="Candidato 1">Candidato 1</option>
+            <option value="Candidato 2">Candidato 2</option>
+            <!-- Agrega más opciones aquí -->
+        </select><br>
+
+        
+
+        <label>¿Cómo se enteró de nosotros?</label><br>
+        <input type="checkbox" name="como_se_entero[]" value="Internet"> Internet o Televisión<br>
+        <input type="checkbox" name="como_se_entero[]" value="Redes Sociales"> Redes Sociales <br>
+        <input type="checkbox" name="como_se_entero[]" value="Amigos/Familiares"> Amigos/Familiares<br>
+        <input type="checkbox" name="como_se_entero[]" value="Otros"> Otros<br>
+        
+
+        <input type="submit" value="Enviar Voto">
+    </form>
+
+    
+</body>
+<script src="js/consumiapi.js"></script>
+
+</html>
